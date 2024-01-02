@@ -9,11 +9,11 @@ import {
   compose,
   applyMiddleware,
 } from "redux";
-import { featuring, logger } from "./middlewares/index.js";
+import { logger } from "./middlewares/index.js";
 
 const composedEnhancers = compose(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(logger, featuring)
+  applyMiddleware(logger)
 );
 const store = createStore(pokemonsReducer, composedEnhancers);
 ReactDOM.createRoot(document.getElementById("root")).render(
