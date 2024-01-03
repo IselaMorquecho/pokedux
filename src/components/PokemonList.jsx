@@ -11,6 +11,7 @@ const PokemonList = ({ pokemons }) => {
             key={pokemon.name}
             name={pokemon.name}
             url={pokemon.sprites.front_default}
+            types={pokemon.types}
           />
         );
       })}
