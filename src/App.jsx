@@ -9,9 +9,9 @@ import { getPokemonsWithDetails, setLoading } from "./actions";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 function App() {
   const pokemons = useSelector((state) =>
-    state.get("pokemons", shallowEqual).toJS()
+    state.getIn(['data',"pokemons"], shallowEqual).toJS()
   );
-  const loading = useSelector((state) => state.get("loading"));
+  const loading = useSelector((state) => state.getIn(['ui',"loading"]));
   const dispatch = useDispatch();
 
   useEffect(() => {
